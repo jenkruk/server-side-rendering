@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --darkest: 0, 0, 0;
+  --lightest: 255, 255, 255;
+  --amex: 1, 111, 209;
+  --accent: 30, 41, 59;
+  --hover: 156, 163, 175;
+  --gray: 203, 213, 225;
+  --line: 226, 232, 240;
+}
+
+html {
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+body {
+  color: rgb(var(--darkest));
+  background: rgb(var(--lightest));
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(var(--gray));
+}
+
+.trigger::after {
+  content: "Go to Google Doc";
+  position: absolute;
+  width: 200px;
+  font-size: 12px;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+  top: 40px;
+  left: -100px;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  line-height: 1.5rem;
+  font-style: normal;
+  border: 1px solid rgb(var(--darkest), 0.15);
+  color: rgb(var(--lightest));
+  background: rgb(var(--accent));
+  opacity: 0; /* Initial opacity set to 0 */
+  pointer-events: none; /* Ensure the tooltip doesn't interfere with mouse events */
+}
+
+.trigger:hover::after {
+  opacity: 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
